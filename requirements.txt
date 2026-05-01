@@ -1,10 +1,27 @@
-ale-py==0.7.4
-einops==0.3.2
-gym[accept-rom-license]==0.21.0
-hydra-core==1.1.1
-opencv-python
-protobuf==3.20.*
-psutil==5.8.0
-pygame==2.1.2
-tqdm==4.66.4
-wandb==0.12.7
+# Core PyTorch 2.x stack for IRIS-SurgWMBench.
+# Install a CUDA-specific torch/torchvision wheel first if needed:
+# https://pytorch.org/get-started/locally/
+torch>=2.0
+torchvision>=0.15
+
+# SurgWMBench data loading, metrics, and validation.
+numpy>=1.24
+pillow>=10.0
+opencv-python>=4.8
+tqdm>=4.66
+einops>=0.6
+
+# Configuration and experiment utilities retained for IRIS compatibility.
+hydra-core>=1.3
+omegaconf>=2.3
+psutil>=5.9
+wandb>=0.16
+
+# Tests and local smoke checks.
+pytest>=8.0
+
+# Optional legacy Atari/IRIS dependencies.
+# The SurgWMBench data foundation does not require Atari ROMs.
+gym==0.26.2
+ale-py>=0.8
+pygame>=2.5
